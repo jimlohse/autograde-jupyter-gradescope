@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+# get the name of the student file and setup a var with it
+# to allow for variations in filenames 
+# rewrite in bash
+
+# filenames = os.listdir('/autograder/submission')
+# filename = [file for file in filenames if file.endswith(".ipynb")]
+
+# if filename == []:
+#     # not a proper filename, no ipynb
+#     print("the file name is not correct, there is no ipynb file.")
+#     sys.exit(1)
+# else:
+#     full_filename = os.path.join("/autograder/submission", filename)
+#     shutil.copy(filename, "/autograder/source/notebook.ipynb")
+
+cp /autograder/submission/*.ipynb /autograder/source/notebook.ipynb
+
+cd /autograder/source
+
+python3 run_tests.py
